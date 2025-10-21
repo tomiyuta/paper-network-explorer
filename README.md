@@ -1,103 +1,103 @@
 # Paper Network Explorer
 
-Academic Paper Network Visualization - Interactive 2D citation network using Semantic Scholar API
+学術論文ネットワーク可視化 - Semantic Scholar APIを活用したインタラクティブな2D引用ネットワーク
 
 ![Paper Network Explorer](https://img.shields.io/badge/React-19-blue)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.6-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
-## Overview
+## 概要
 
-Paper Network Explorer is a web application that visualizes academic paper citation networks in an interactive 2D graph. Inspired by [Connected Papers](https://www.connectedpapers.com/), it uses the Semantic Scholar API to access over 200 million papers and their citation relationships.
+Paper Network Explorerは、学術論文の引用関係をインタラクティブな2Dグラフで可視化するWebアプリケーションです。[Connected Papers](https://www.connectedpapers.com/)にインスパイアされ、Semantic Scholar APIを使用して2億件以上の論文とその引用関係にアクセスします。
 
-## Features
+## 主な機能
 
-- **Paper Search**: Search by title, DOI, ArXiv ID, or Semantic Scholar ID
-- **Interactive 2D Network Graph**: Force-directed graph visualization of citation relationships
-- **Year-based Color Coding**: Nodes colored from green (older) to blue (newer)
-- **Citation-based Node Sizing**: Node size reflects citation count
-- **Three-column Layout**: 
-  - Left: Related papers list
-  - Center: Interactive network graph
-  - Right: Selected paper details
-- **Dark/Light Theme**: Toggle between themes
+- **論文検索**: タイトル、DOI、ArXiv ID、Semantic Scholar IDで検索可能
+- **インタラクティブな2Dネットワークグラフ**: 力指向グラフによる引用関係の可視化
+- **年代別カラーリング**: ノードを緑（古い論文）から青（新しい論文）のグラデーションで色分け
+- **被引用数によるノードサイズ調整**: 被引用数が多いほど大きなノードで表示
+- **3カラムレイアウト**: 
+  - 左: 関連論文リスト
+  - 中央: インタラクティブなネットワークグラフ
+  - 右: 選択した論文の詳細情報
+- **ダーク/ライトテーマ**: テーマの切り替えが可能
 
-## Tech Stack
+## 技術スタック
 
-- **Frontend**: React 19, TypeScript, Tailwind CSS, shadcn/ui
-- **Backend**: Node.js, tRPC, Express
-- **Graph Visualization**: react-force-graph-2d
-- **Routing**: Wouter
+- **フロントエンド**: React 19, TypeScript, Tailwind CSS, shadcn/ui
+- **バックエンド**: Node.js, tRPC, Express
+- **グラフ可視化**: react-force-graph-2d
+- **ルーティング**: Wouter
 - **API**: Semantic Scholar API
 
-## Installation
+## インストール
 
 ```bash
-# Install dependencies
+# 依存パッケージのインストール
 pnpm install
 
-# Start development server
+# 開発サーバーの起動
 pnpm dev
 
-# Build for production
+# 本番用ビルド
 pnpm build
 ```
 
-## Usage
+## 使い方
 
-1. Enter a paper title, DOI, or Semantic Scholar ID in the search box
-2. Click "探索" (Explore) button
-3. View the citation network in the center panel
-4. Click nodes to view paper details
-5. Right-click nodes to navigate to that paper's network
+1. 検索ボックスに論文タイトル、DOI、またはSemantic Scholar IDを入力
+2. 「探索」ボタンをクリック
+3. 中央パネルで引用ネットワークを確認
+4. ノードをクリックして論文の詳細を表示
+5. ノードを右クリックしてその論文のネットワークに移動
 
-## Project Structure
+## プロジェクト構造
 
 ```
 paper-network/
 ├── client/src/
-│   ├── pages/          # Page components
-│   ├── components/     # Reusable components
-│   ├── contexts/       # React contexts
-│   └── App.tsx         # Main app component
+│   ├── pages/          # ページコンポーネント
+│   ├── components/     # 再利用可能なコンポーネント
+│   ├── contexts/       # Reactコンテキスト
+│   └── App.tsx         # メインアプリコンポーネント
 ├── server/
-│   ├── routers.ts      # tRPC routers
-│   └── _core/          # Server core
+│   ├── routers.ts      # tRPCルーター
+│   └── _core/          # サーバーコア
 └── shared/
-    └── const.ts        # Shared constants
+    └── const.ts        # 共有定数
 ```
 
 ## API
 
-This project uses the [Semantic Scholar API](https://api.semanticscholar.org/) to fetch paper data and citation information.
+このプロジェクトは[Semantic Scholar API](https://api.semanticscholar.org/)を使用して論文データと引用情報を取得しています。
 
-## Screenshots
+## スクリーンショット
 
-### Home Page
-Search for papers by title, DOI, or Semantic Scholar ID.
+### ホームページ
+タイトル、DOI、またはSemantic Scholar IDで論文を検索できます。
 
-### Network Visualization
-Interactive 2D graph showing citation relationships with year-based coloring.
+### ネットワーク可視化
+年代別カラーリングによる引用関係のインタラクティブな2Dグラフ表示。
 
-## Future Enhancements
+## 今後の拡張予定
 
-- Database integration for search history
-- User authentication
-- Advanced filtering (year, field, citation count)
-- Export functionality (PNG, SVG, JSON)
-- Japanese paper support (医中誌Web, J-STAGE, CiNii)
+- 検索履歴のためのデータベース統合
+- ユーザー認証機能
+- 高度なフィルタリング（年代、分野、被引用数）
+- エクスポート機能（PNG、SVG、JSON）
+- 日本語論文対応（医中誌Web、J-STAGE、CiNii）
 
-## License
+## ライセンス
 
 MIT License
 
-## Acknowledgments
+## 謝辞
 
-- [Semantic Scholar](https://www.semanticscholar.org/) for providing the API
-- [Connected Papers](https://www.connectedpapers.com/) for inspiration
-- [react-force-graph](https://github.com/vasturiano/react-force-graph) for graph visualization
+- [Semantic Scholar](https://www.semanticscholar.org/) - APIの提供
+- [Connected Papers](https://www.connectedpapers.com/) - インスピレーション
+- [react-force-graph](https://github.com/vasturiano/react-force-graph) - グラフ可視化
 
-## Author
+## 作者
 
-Created by [tomiyuta](https://github.com/tomiyuta)
+[tomiyuta](https://github.com/tomiyuta)
 
